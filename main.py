@@ -5,12 +5,11 @@ import os
 from twilio.rest import Client
 
 
-# API_KEY = "PLACE_API_KEY_HERE"
-API_KEY = ""
-account_sid = os.environ['TWILIO_ACCOUNT_SID'] = ""
-auth_token = os.environ['TWILIO_AUTH_TOKEN'] = ""
-FROM_PHONE = ""
-TO_PHONE = ""
+OPEN_WEATHER_API_KEY = os.environ["OPEN_WEATHER_API"]
+account_sid = os.environ["TWILIO_ACCOUNT_SID"]
+auth_token = os.environ["TWILIO_AUTH_TOKEN"]
+FROM_PHONE = os.environ["FROM_TEXT"]
+TO_PHONE = os.environ["TO_TEXT"]
 WEATHER_ENDPOINT = "https://api.openweathermap.org/data/2.5/onecall"
 CURRENT_LAT = 45.523064
 CURRENT_LON = -122.676483
@@ -18,7 +17,7 @@ CURRENT_LON = -122.676483
 parameters = {
     "lat": CURRENT_LAT,
     "lon": CURRENT_LON,
-    "appid": API_KEY,
+    "appid": OPEN_WEATHER_API_KEY,
     "exclude": "current,minutely,daily,alerts"
 }
 
